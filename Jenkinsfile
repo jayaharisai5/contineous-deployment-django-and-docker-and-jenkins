@@ -10,23 +10,6 @@ pipeline{
                 '''
             }
         }
-        stage("Setup Gunicorn Setup"){
-            steps{
-                sh '''
-                chmod +x gunicorn.sh
-                ./gunicorn.sh
-                '''
-            }
-        }
-        stage("Step NGINX"){
-            steps{
-                steps {
-                sh '''
-                chmod +x nginx.sh
-                ./nginx.sh
-                '''
-            }
-            }
-        }
+
     }
 }
