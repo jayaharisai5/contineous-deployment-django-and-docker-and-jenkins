@@ -2,16 +2,6 @@ pipeline{
     agent any
 
     stages{
-        stage("Checkout"){
-            steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/jayaharisai5/contineous-deployment-django-and-docker-and-jenkins.git']]])
-            }
-        }
-        stage("build"){
-            steps{
-                git branch: 'master', url: 'https://github.com/jayaharisai5/contineous-deployment-django-and-docker-and-jenkins.git'
-            }
-        }
         stage("Set up python VIrtual ENV"){
             steps{
                 sh '''
