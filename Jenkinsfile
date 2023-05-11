@@ -10,6 +10,22 @@ pipeline{
                 '''
             }
         }
+        stage("Migration"){
+            steps{
+                sh '''
+                chmod +x .migration.sh
+                ./.envsetup.sh
+                '''
+            }
+        }
+        stage("Gunicorn"){
+            steps{
+                sh '''
+                chmod +x .gunicorn.sh
+                ./.envsetup.sh
+                '''
+            }
+        }
 
     }
 }
