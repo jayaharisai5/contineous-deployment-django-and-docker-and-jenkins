@@ -24,4 +24,4 @@ python3 ./demo/manage.py migrate
 
 sudo ufw allow 8000
 
-gunicorn --bind 0.0.0.0:8000 myproject.wsgi
+# gunicorn --bind 0.0.0.0:8000 myproject.wsgi
