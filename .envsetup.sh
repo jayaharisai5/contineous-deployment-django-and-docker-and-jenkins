@@ -19,9 +19,9 @@ echo $PWD
 source venv/bin/activate
 
 pip3 install -r requirements.txt
-python3 manage.py makemigrations
-python3 manage.py migrate
+python3 ./demo/manage.py makemigrations
+python3 ./demo/manage.py .migrate
 
 sudo ufw allow 8000
 
-python3 manage.py runserver 0.0.0.0:8000
+python3 ./demo/manage.py runserver 0.0.0.0:8000
