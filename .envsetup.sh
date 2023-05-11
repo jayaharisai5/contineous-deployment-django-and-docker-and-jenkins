@@ -6,3 +6,7 @@ then
 else
     python3 -m venv venv
 fi
+
+
+echo $PWD
+source env/bin/activate
