@@ -7,11 +7,11 @@ After=network.target
 User=ubuntu
 Group=www-data
 WorkingDirectory=/var/lib/jenkins/workspace/demo deployment/demo
-ExecStart=/home/ubuntu/bhoomi/venv/bin/gunicorn \
+ExecStart=/var/lib/jenkins/workspace/demo deployment/venv/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
-          BhoomiProject.wsgi:application
+          demo.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
