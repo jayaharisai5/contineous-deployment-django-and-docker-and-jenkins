@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Update the linux
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt install python3-venv libpq-dev nginx curl
+
+# Create virtual environment
 if [-d "env"]
 then
     echo "Python virtual env exist"
@@ -8,8 +15,13 @@ else
     python3 -m venv venv
 fi
 
-
 echo $PWD
 source venv/bin/activate
 
 pip3 install -r requirements.txt
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+sudo ufw allow 8000
+
+python3 manage.py runserver 0.0.0.0:8000
